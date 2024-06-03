@@ -17,6 +17,12 @@ export class RenderPageHome extends BeanRenderBase {
               Less is more, while more is less
             </div>
           </div>
+          <div
+            style={{ width: '80%', height: '300px' }}
+            ref={ref => {
+              this.chartRef = ref as any;
+            }}
+          ></div>
         </div>
       </QPage>
     );
