@@ -1,0 +1,52 @@
+{
+  "name": "zova-ui-quasar",
+  "version": "5.0.103",
+  "description": "A vue3 quasar framework with ioc",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "zhennann <zhen.nann@icloud.com>",
+  "type": "module",
+  "scripts": {
+    "dev": "quasar dev",
+    "build": "quasar build && tsc --noEmit --project tsconfig.vue-tsc.json",
+    "preview": "vite preview --outDir=dist/spa",
+    "tsc": "vue-tsc --noEmit --project tsconfig.vue-tsc.json",
+    "lint": "eslint . --fix --ignore-path .gitignore"
+  },
+  "keywords": [
+    "nodejs",
+    "full-stack",
+    "workflow-engine",
+    "vue3",
+    "ioc",
+    "zova"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cabloy/zova.git"
+  },
+  "homepage": "https://github.com/cabloy/zova#readme",
+  "bugs": {
+    "url": "https://github.com/cabloy/zova/issues"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.16.11",
+    "quasar": "~2.15.4",
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2",
+    "zova": "^5.0.77"
+  },
+  "devDependencies": {
+    "@cabloy/lint": "^4.0.10",
+    "@quasar/app-vite": "2.0.0-beta.11",
+    "@quasar/vite-plugin": "~1.6.0",
+    "@types/node": "^20.14.0",
+    "autoprefixer": "^10.4.19",
+    "quasar-app-extension-zova": "^1.1.64",
+    "typescript": "^5.4.5",
+    "vue-tsc": "^2.0.19"
+  },
+  "license": "MIT",
+  "gitHead": "73087c06216bd721f06681d46ce488bb425c26a3"
+}

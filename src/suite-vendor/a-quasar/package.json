@@ -1,0 +1,11 @@
+{
+  "name": "zova-suite-a-quasar",
+  "version": "5.0.0",
+  "title": "a-quasar",
+  "type": "module",
+  "description": "quasar",
+  "author": "zhennann",
+  "dependencies": {
+    "zova-module-a-quasar": "workspace:^"
+  }
+}
