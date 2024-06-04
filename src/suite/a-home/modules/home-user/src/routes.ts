@@ -8,6 +8,7 @@ export const routes: IModuleRoute[] = [
     component: Login,
     meta: {
       layout: 'empty',
+      requiresAuth: false,
     },
   }, // /home/user/login
 ];
