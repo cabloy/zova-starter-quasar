@@ -28,8 +28,17 @@ export class StoreUserInfo extends BeanBase<ScopeModule> {
     this._jwt = value;
   }
 
+  protected async __init__() {
+    const res = localStorage.getItem('userInfo');
+    if (!res) return;
+    const data = JSON.parse(res) as UserInfoData;
+    this.user = data.user;
+    this.jwt = data.jwt;
+  }
+
   setUserInfo(data: UserInfoData) {
     this.user = data.user;
     this.jwt = data.jwt;
+    localStorage.setItem('userInfo', JSON.stringify(data));
   }
 }
