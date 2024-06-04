@@ -41,4 +41,9 @@ export class StoreUserInfo extends BeanBase<ScopeModule> {
     this.jwt = data.jwt;
     localStorage.setItem('userInfo', JSON.stringify(data));
   }
+
+  logout() {
+    this.setUserInfo({});
+    this.$router.replace('/home/user/login');
+  }
 }

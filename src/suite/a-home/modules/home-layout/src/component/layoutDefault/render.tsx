@@ -14,11 +14,12 @@ import {
   QToolbarTitle,
 } from 'quasar';
 import { JSX } from 'vue/jsx-runtime';
+import { ScopeModule } from '../../resource/this.js';
 
 export interface RenderLayoutDefault extends ControllerLayoutDefault {}
 
 @Local()
-export class RenderLayoutDefault extends BeanRenderBase {
+export class RenderLayoutDefault extends BeanRenderBase<ScopeModule> {
   _renderMenuItem(item: TypeMenuItem) {
     if (item.separator) {
       return <QSeparator spaced></QSeparator>;
@@ -54,7 +55,14 @@ export class RenderLayoutDefault extends BeanRenderBase {
 
             <QToolbarTitle> Quasar App </QToolbarTitle>
 
-            <div>Quasar v{this.$q.version}</div>
+            <QBtn
+              onClick={() => {
+                this.$$userInfo.logout();
+              }}
+            >
+              {this.scope.locale.LogOut()}
+            </QBtn>
+            <div>{this.$$userInfo.user?.username}</div>
           </QToolbar>
         </QHeader>
 

@@ -2,6 +2,7 @@ import { BeanRenderBase, Local } from 'zova';
 import type { ControllerPageLogin } from './controller.js';
 import { ScopeModule } from '../../resource/this.js';
 import { QBtn, QForm, QInput, QPage } from 'quasar';
+import { withModifiers } from 'vue';
 
 export interface RenderPageLogin extends ControllerPageLogin {}
 
@@ -15,10 +16,11 @@ export class RenderPageLogin extends BeanRenderBase<ScopeModule> {
             <QInput v-model={this.user.username} label={this.scope.locale.YourUsername()}></QInput>
             <QInput v-model={this.user.password} label={this.scope.locale.YourPassword()}></QInput>
             <QBtn
+              type="submit"
               label={this.scope.locale.Login()}
-              onClick={() => {
+              onClick={withModifiers(() => {
                 this.login();
-              }}
+              }, ['prevent'])}
             ></QBtn>
           </QForm>
         </div>
