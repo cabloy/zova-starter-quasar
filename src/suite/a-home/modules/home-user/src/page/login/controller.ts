@@ -20,6 +20,16 @@ export class ControllerPageLogin extends BeanControllerPageBase<ScopeModule, Que
     username: '',
     password: '',
   };
+  jwt?: string;
 
-  async login() {}
+  async login() {
+    // api
+    const res = await this.$api.post('/home/user/login', this.user);
+    const data = res.data.data;
+    // save
+    this.user = data.user;
+    this.jwt = data.jwt;
+    // home
+    this.$router.replace('/'); // /a/home/home
+  }
 }

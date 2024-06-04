@@ -3,13 +3,20 @@ import * as echarts from 'echarts';
 
 @Local()
 export class ControllerPageHome extends BeanControllerPageBase {
-  chartInstance;
+  chartInstance?: echarts.ECharts;
   chartRef: HTMLDivElement; // not ref(null)
 
   protected async __init__() {
     onControllerMounted(() => {
       this.loadChart();
     });
+  }
+
+  protected __dispose__() {
+    if (this.chartInstance) {
+      this.chartInstance.dispose();
+      this.chartInstance = undefined;
+    }
   }
 
   loadChart() {
