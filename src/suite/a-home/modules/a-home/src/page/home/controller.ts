@@ -1,5 +1,6 @@
 import { BeanControllerPageBase, Local, onControllerMounted } from 'zova';
 import * as echarts from 'echarts';
+import { markRaw } from 'vue';
 
 @Local()
 export class ControllerPageHome extends BeanControllerPageBase {
@@ -21,7 +22,7 @@ export class ControllerPageHome extends BeanControllerPageBase {
 
   loadChart() {
     // Create the echarts instance
-    this.chartInstance = echarts.init(this.chartRef, 'dark');
+    this.chartInstance = markRaw(echarts.init(this.chartRef, 'dark'));
 
     // Draw the chart
     this.chartInstance.setOption({
