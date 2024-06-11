@@ -1,6 +1,6 @@
 import { BeanRenderBase, Local } from 'zova';
 import type { ControllerCard } from './controller.js';
-import { QBtn } from 'quasar';
+import { QBtn, QCard } from 'quasar';
 
 export interface RenderCard extends ControllerCard {}
 
@@ -17,7 +17,7 @@ export class RenderCard extends BeanRenderBase {
         >
           Reset Time
         </QBtn>
-        <div>
+        <QCard dark>
           <div style={{ backgroundColor: 'teal' }}>
             <div>Slot: {this.$slots.header?.()}</div>
             <div>Prop: {this.$props.header}</div>
@@ -30,7 +30,7 @@ export class RenderCard extends BeanRenderBase {
             <div>Slot: {this.$slots.footer?.()}</div>
             <div>Prop: {this.$props.footer}</div>
           </div>
-        </div>
+        </QCard>
       </div>
     );
   }
